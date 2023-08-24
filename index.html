@@ -1,0 +1,10 @@
+<head>
+  <!-- Test infrastructure - DO NOT EDIT -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Faker/3.1.0/faker.min.js"></script>
+  <script>
+    (()=>{let $=()=>"10000000-1000-4000-8000-100000000000".replace(/[018]/g,$=>($^crypto.getRandomValues(new Uint8Array(1))[0]&15>>$/4).toString(16)),e=()=>null,n=()=>null,a=0,t,r=[faker.name.firstName(),faker.name.firstName(),faker.name.firstName(),],o=$=>e($),s=(e,n="Me")=>{o({content:e,user:n,id:$(),timestamp:Date.now()})},m=()=>r[Math.round(2*Math.random())],d=()=>{a=0,clearInterval(t),t=setInterval(()=>{if(a>=3){clearInterval(t);return}s(faker.hacker.phrase(),m()),a++},5e3)},l=()=>{let $=m();n($);let e=(Math.floor(10*Math.random())+4)*1e3;setTimeout(l,e)};l(),document.addEventListener("keydown",()=>{n("Me")}),window.Chat={sendMessage:$=>(d(),new Promise((e,n)=>{2>Math.floor(3*Math.random())?setTimeout(()=>{s($),e()},300):n(Error("Failed to send message"))})),onMessage($){d(),e=$},onTyping($){n=$}}})();
+  </script>
+  <!-- Test infrastructure - DO NOT EDIT -->
+</head>
+
+<div id="root"></div>
