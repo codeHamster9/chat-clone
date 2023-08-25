@@ -56,21 +56,26 @@ import MessageBox from './components/MessageBox';
 
 const App = () => {
   const [message, setMessage] = useState(undefined);
+  const [typing, setTyping] = useState('');
 
   const messageRecieved = (message) => {
-    console.log('messageRecieved', message);
     setMessage(message);
+  };
+
+  const userTyping = (user) => {
+    console.log('is typing:', user);
+    setTyping(user);
   };
 
   useEffect(() => {
     window.Chat.onMessage(messageRecieved);
-    console.log('mounted');
+    window.Chat.onTyping(userTyping);
   }, []);
 
   return (
     <div className="container">
       <MessageBox message={message} />
-      <Controls />
+      <Controls typing={typing} />
     </div>
   );
 };

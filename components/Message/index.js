@@ -8,6 +8,10 @@ export default ({ content, user, timestamp, arrow, color }) => {
     messageStyle = messageStyle.concat(' ', 'with-arrow');
   }
 
+  if (user === 'Me') {
+    messageStyle = messageStyle.concat(' ', 'me-message', ' ', 'self');
+  }
+
   return (
     <div className={messageStyle}>
       {arrow && <div className="title">{user}</div>}
